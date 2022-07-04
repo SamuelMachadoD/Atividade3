@@ -19,11 +19,11 @@ public class GerarJSON extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession sessao = request.getSession();
-		String cep = (String) sessao.getAttribute("CEP");
+//		HttpSession sessao = request.getSession();
+//		String cep = (String) sessao.getAttribute("CEP");
 		
 		Random r = new Random();
-		Integer numero = r.nextInt(1000) + 1;
+		Integer numero = r.nextInt(100) + 1;
 		Integer numero2 = r.nextInt(10) + 1;
 		List<Integer> numeros = new ArrayList();
 		numeros.add(numero);

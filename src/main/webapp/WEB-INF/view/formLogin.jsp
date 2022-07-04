@@ -10,7 +10,7 @@
 		Senha: <input type="password" name="senha"/><br>
 		
 		<input type="hidden" name="acao" value="Login"/>
-		<input type="submit" />
+		<input type="submit" value="Login">
 	</form>
 </body>
 </html>

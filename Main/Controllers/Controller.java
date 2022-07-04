@@ -26,8 +26,7 @@ public class Controller extends HttpServlet {
 			Class classe = Class.forName(nomeDaClasse);
 			Acao acao =(Acao)classe.newInstance();
 			nome = acao.executa(request, response);
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | ServletException
-				| IOException e) {
+		} catch (Exception e) {
 			
 			throw new ServletException(e);
 		}

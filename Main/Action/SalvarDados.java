@@ -31,7 +31,9 @@ public class SalvarDados implements Acao {
 		String rua = request.getParameter("rua");
 		String numero = request.getParameter("numero");
 		
-		
+		if(cep.length() > 8 || cep.length() < 8) {
+			return "foward:formCompra.jsp";
+		}
 		Pessoa pessoa = new Pessoa(nome,cep,estado,cidade,rua,numero);
 		
 		em.getTransaction().begin();

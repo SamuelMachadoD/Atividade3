@@ -12,8 +12,8 @@
 </head>
 <body>
 
-	Valor de frete = ${valor}<br>
-	Dias para entrega = ${valor2}
+	Valor de frete = R$${valor}<br>
+	Prazo = ${valor2} dias
 	
 </body>
 </html>

@@ -21,17 +21,20 @@ public class Login implements Acao {
 		String senha = request.getParameter("senha");
 		EntityManager em = JPAUtil.getEntityManager();
 		UserDAO userDAO = new UserDAO(em);
-		User user = userDAO.buscarPorNomeSenha(login, senha);
 		
-		if(user != null) {
+		
+		try {
+			User logado = userDAO.buscar(login, senha);
 			HttpSession sessao = request.getSession();
-			sessao.setAttribute("usuarioLogado", user);
+			System.out.println("loguei");
+			sessao.setAttribute("usuarioLogado", logado);
 			return "foward:formCompra.jsp";
-			
-		} else {
-			
+		}catch(Exception e) {
+
 			return "redirect:principal?acao=LoginForm";
+			
 		}
+		
 		
 		
 	}

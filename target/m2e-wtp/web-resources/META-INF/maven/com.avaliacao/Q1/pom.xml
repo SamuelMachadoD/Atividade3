@@ -69,6 +69,7 @@
 			<name>Repository hosting the jee6 artifacts</name>
 			<url>http://download.java.net/maven/2</url>
 		</repository>
+
 	</repositories>
 	<build>
 		<finalName>Q1</finalName>

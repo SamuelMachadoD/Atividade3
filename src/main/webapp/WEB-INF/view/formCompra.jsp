@@ -10,13 +10,13 @@
 	<form action="/Q1/principal" method="post">
 	
 		Nome: <input type="text" name="nome"/><br>
-		CEP: <input type="text" name="CEP"><br>
+		CEP: <input  type="number" name="CEP"><br>
 		Estado: <input type="text" name="estado"/><br>
 		Cidade: <input type="text" name="cidade"/><br>
 		Rua/Avenida: <input type="text" name="rua"/><br>
-		Numero: <input type="text" name="numero"/><br>
-		Valor da Compra : xx
-		Produto : XX
+		Número: <input type="text" name="numero"/><br>
+		Valor da Compra : XX<br>
+		Produto : XX<br>
 				
 		
 		<input type="hidden" name="acao" value="SalvarDados"/>
