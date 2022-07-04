@@ -1,15 +1,18 @@
 package Modelo;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "pessoas")
 public class Pessoa {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String estado;
@@ -18,6 +21,17 @@ public class Pessoa {
 	private String rua;
 	private String numero;
 	
+	public Pessoa() {
+		
+	}
+	public Pessoa(String nome, String cep, String estado, String cidade, String rua, String numero) {
+		this.nome = nome;
+		this.cep = cep;
+		this.estado = estado;
+		this.cidade = cidade;
+		this.rua = rua;
+		this.numero = numero;
+	}
 	public Long getId() {
 		return id;
 	}

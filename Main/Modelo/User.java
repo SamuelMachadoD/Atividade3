@@ -41,4 +41,8 @@ public class User {
 
         return true;
     }
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return id;
+	}
 }
