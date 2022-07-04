@@ -1,10 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<c:url value="/principal" var="linkServlet"/>
+<c:url value="" var="linkServlet"/>
 <!DOCTYPE html>
 <html>
 <body>
-	<form action="${linkServlet}" method="post">
+	<form action="/Q1/principal" method="post">
 	
 		Login: <input type="text" name="login"/>
 		Senha: <input type="password" name="senha"/>

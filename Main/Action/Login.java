@@ -15,18 +15,20 @@ public class Login implements Acao {
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("Passei aqui");
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		
 		UserDAO userDAO = new UserDAO();
 		User user = userDAO.buscarPorNomeSenha(login, senha);
+		System.out.println(user.getLogin());
 		
 		if(user != null) {
 			HttpSession sessao = request.getSession();
 			sessao.setAttribute("usuarioLogado", user);
 			return "forward:formCompra.jsp";
+			
 		} else {
+			
 			return "redirect:principal?acao=LoginForm";
 		}
 		

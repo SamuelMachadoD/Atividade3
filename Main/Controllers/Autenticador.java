@@ -24,7 +24,7 @@ public class Autenticador extends HttpFilter implements Filter {
 		HttpServletResponse Hresponse = (HttpServletResponse)response;
 		HttpSession sessao = Hrequest.getSession();
 		boolean naologado = (sessao.getAttribute("usuarioLogado") == null);
-		boolean protegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
+		boolean protegida = !(paramAcao.equals("Login") || (paramAcao.equals("LoginForm")));
 		
 		if (naologado && protegida){
 			Hresponse.sendRedirect("principal?acao=LoginForm");
