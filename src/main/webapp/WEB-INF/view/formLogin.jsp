@@ -6,8 +6,8 @@
 <body>
 	<form action="/Q1/principal" method="post">
 	
-		Login: <input type="text" name="login"/>
-		Senha: <input type="password" name="senha"/>
+		Login: <input type="text" name="login"/><br>
+		Senha: <input type="password" name="senha"/><br>
 		
 		<input type="hidden" name="acao" value="Login"/>
 		<input type="submit" />

@@ -10,7 +10,6 @@ import javax.persistence.Table;
 public class Pessoa {
 	
 	@Id
-	@OneToOne
 	private Long id;
 	private String nome;
 	private String estado;

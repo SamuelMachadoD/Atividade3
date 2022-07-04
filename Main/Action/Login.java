@@ -2,6 +2,7 @@ package Action;
 
 import java.io.IOException;
 
+import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import Dao.UserDAO;
 import Modelo.User;
+import Util.JPAUtil;
 
 public class Login implements Acao {
 
@@ -17,15 +19,14 @@ public class Login implements Acao {
 			throws ServletException, IOException {
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
-		
-		UserDAO userDAO = new UserDAO();
+		EntityManager em = JPAUtil.getEntityManager();
+		UserDAO userDAO = new UserDAO(em);
 		User user = userDAO.buscarPorNomeSenha(login, senha);
-		System.out.println(user.getLogin());
 		
 		if(user != null) {
 			HttpSession sessao = request.getSession();
 			sessao.setAttribute("usuarioLogado", user);
-			return "forward:formCompra.jsp";
+			return "foward:formCompra.jsp";
 			
 		} else {
 			

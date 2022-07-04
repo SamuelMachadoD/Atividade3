@@ -3,14 +3,17 @@ package Dao;
 import javax.persistence.EntityManager;
 
 import Modelo.User;
+import Util.JPAUtil;
 
 public class UserDAO {
 	private EntityManager em;
-	public User buscarPorNomeSenha(String nome, String senha) {
-		String jpql = "SELECT p FROM users p WHERE p.nome = ?1, p.senha = ?2";
-		return em.createQuery(jpql, User.class)
-				.setParameter(1, nome)
-				.setParameter(2, senha)
+	public UserDAO(EntityManager em2) {
+		this.em = em2;
+	}
+	public User buscarPorNomeSenha(String login, String senha) {
+		String jpql = "SELECT p FROM User p WHERE p.login = :login";
+		return this.em.createQuery(jpql, User.class)
+				.setParameter("login", login)
 				.getSingleResult();
 	}
 }
