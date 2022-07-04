@@ -30,9 +30,7 @@ public class Login implements Acao {
 			sessao.setAttribute("usuarioLogado", logado);
 			return "foward:formCompra.jsp";
 		}catch(Exception e) {
-
 			return "redirect:principal?acao=LoginForm";
-			
 		}
 		
 		

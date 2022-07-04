@@ -21,10 +21,10 @@ public class GerarWEB extends HttpServlet implements Acao{
 //		String cep = (String) sessao.getAttribute("CEP");
 		
 		Random r = new Random();
-		int numero = r.nextInt(100) + 1;
+		Double frete = (r.nextInt(10000) + 1)/100.0;
 		int numero2 = r.nextInt(10) + 1;
 		
-		request.setAttribute("valor", numero);
+		request.setAttribute("valor", frete);
 		request.setAttribute("valor2", numero2);
 		
 		return "foward:WEBVIEW.jsp";
